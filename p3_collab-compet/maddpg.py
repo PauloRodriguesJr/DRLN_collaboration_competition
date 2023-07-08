@@ -63,6 +63,8 @@ class MADDPG:
         self.state_size = state_size
 
     def step(self, states, actions, rewards, next_states, dones, priority):
+        # TODO: Retrieve the priority from the TD error computed by the DDPG agent
+
         self.buffer.add(states, actions, rewards, next_states, dones, priority)
 
         if len(self.buffer) > BATCH_SIZE:
