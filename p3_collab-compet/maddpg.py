@@ -74,7 +74,7 @@ class MADDPG:
         for index, agent in enumerate(self.agents):
             actions[index, :] = agent.act(states[index], add_noise)
         return actions
-    
+
     def reset(self):        
         for agent in self.agents:
             agent.reset()

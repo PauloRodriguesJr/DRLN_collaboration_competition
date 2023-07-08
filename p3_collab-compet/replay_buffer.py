@@ -19,19 +19,20 @@ class ReplayBuffer:
         self.memory = deque(maxlen=buffer_size)
         self.batch_size = batch_size
         self.experience = namedtuple("Experience", field_names=[
-                                     "states", "actions", "rewards", "next_states", "dones"])
+                                     "states", "actions", "rewards", "next_states", "dones", "priority"])
         self.n_agents = n_agents
 
-    def add(self, state, action, reward, next_state, done):
+    def add(self, state, action, reward, next_state, done, priority):
         """Add a new experience to memory."""
-        e = self.experience(state, action, reward, next_state, done)
+        e = self.experience(state, action, reward, next_state, done, priority)
         self.memory.append(e)
 
     def sample(self):
         """Randomly sample a batch of experiences from memory."""
-
         # TODO: Weight the probability of being selected by its priority
         
+        # Start retrieving the priority of the experience
+
         experiences = random.sample(self.memory, k=self.batch_size)
 
         states_list = [torch.from_numpy(np.vstack([e.states[index] for e in experiences if e is not None])).float(
