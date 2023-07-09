@@ -4,8 +4,11 @@ import random
 # from https://github.com/songrotek/DDPG/blob/master/ou_noise.py
 
 # TODO: test other noise processes that can achieve better results
+
+
 class OUNoise:
     """Ornstein-Uhlenbeck process."""
+
     def __init__(self, size, seed, mu=0., theta=0.15, sigma=0.2):
         """Initialize parameters and noise process."""
         self.mu = mu * np.ones(size)

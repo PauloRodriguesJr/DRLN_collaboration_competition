@@ -10,6 +10,7 @@ def hidden_init(layer):
     lim = 1. / np.sqrt(fan_in)
     return (-lim, lim)
 
+
 class Actor(nn.Module):
 
     def __init__(self, state_size, action_size, seed, fc1_units=205, fc2_units=152):
@@ -30,6 +31,7 @@ class Actor(nn.Module):
         x = F.relu(self.fc2(x))
         return torch.tanh(self.fc3(x))
 
+
 class Critic(nn.Module):
 
     def __init__(self, state_size, action_size, seed, fcs1_units=205, fc2_units=152):
@@ -44,7 +46,7 @@ class Critic(nn.Module):
         self.fcs1.weight.data.uniform_(*hidden_init(self.fcs1))
         self.fc2.weight.data.uniform_(*hidden_init(self.fc2))
         self.fc3.weight.data.uniform_(-3e-3, 3e-3)
-    
+
     def forward(self, state, action):
         xs = torch.cat((state, action), dim=1)
         x = F.relu(self.fcs1(xs))

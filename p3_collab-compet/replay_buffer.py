@@ -6,6 +6,7 @@ from collections import namedtuple, deque
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+
 class ReplayBuffer:
     """Fixed-size buffer to store experience tuples."""
 
@@ -30,7 +31,7 @@ class ReplayBuffer:
     def sample(self):
         """Randomly sample a batch of experiences from memory."""
         # TODO: Weight the probability of being selected by its priority
-        
+
         # Start retrieving the priority of the experience
 
         experiences = random.sample(self.memory, k=self.batch_size)
