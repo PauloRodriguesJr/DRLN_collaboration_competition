@@ -115,9 +115,9 @@ The graphic below shows the evolution of the agent score over the episodes, aver
 
     The project presented in this report is still very naive, compared to the state of the art of multi-agent learning methods. As future improvements, it can be done the following:
 
-    - Improve the statistical analysis rigor and metrics quality;
-    - Implement the AlphaZero  learning algorithm and compare their performance with the results achieved by MADDPG for this task;
-    - Improve and tune the network architecture;
+    - Improve the rigor of statistical analysis and improve the quality of metrics used;
+    - Implement the AlphaZero learning algorithm to compare its performance with the results achieved by MADDPG for this task;
+    - Improve and tune the network architecture and other hyperparameters such as learning rate, batch size, tau, etc;
     - Replace the noise function by a better suited process for this task;
     - Finish implementation of Prioritized Experience Replay (PER);
     - Train the agent on the Soccer environment, which is a harder task to learn.
