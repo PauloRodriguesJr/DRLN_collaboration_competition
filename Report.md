@@ -111,6 +111,8 @@ The graphic below shows the evolution of the agent score over the episodes, aver
 <object data="docs/average_scores_result.png" width="300" height="300"> </object>
 </p>
 
+The weights of the trained agent are stored in the models/episode-1878.pt file.
+
 ## Future work
 
     The project presented in this report is still very naive, compared to the state of the art of multi-agent learning methods. As future improvements, it can be done the following:
